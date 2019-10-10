@@ -14,8 +14,8 @@ def preprocess_librispeech(datasets_root: Path, out_dir: Path, n_processes: int,
                            skip_existing: bool, hparams):
     # Gather the input directories
     dataset_root = datasets_root.joinpath("LibriSpeech")
-    input_dirs = [dataset_root.joinpath("train-clean-100"), 
-                  dataset_root.joinpath("train-clean-360")]
+    input_dirs = [dataset_root.joinpath("dev-clean")
+                  ]
     print("\n    ".join(map(str, ["Using data from:"] + input_dirs)))
     assert all(input_dir.exists() for input_dir in input_dirs)
     
